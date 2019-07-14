@@ -35,12 +35,11 @@ Plugin.create(:hunbwalt_der_unko) do
   end
 
   on_der_unko do |message|
-    msg = '@' + message.user.idname + ' '
+    msg = '@' + message.user.idname
     loop do
-      n_msg = greets.sample
+      n_msg =  ' ' + greets.sample
       break if msg.size + n_msg.size >= 140
-
-      msg += n_msg + ' '
+      msg += n_msg
     end
     world, = Plugin.filtering(:world_current, nil)
     compose(world, message, body: msg)
