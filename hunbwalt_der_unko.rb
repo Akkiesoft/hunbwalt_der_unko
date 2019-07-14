@@ -38,7 +38,7 @@ Plugin.create(:hunbwalt_der_unko) do
     msg = '@' + message.user.idname + ' '
     loop do
       n_msg = greets.sample
-      break if msg.split(//).size + n_msg.split(//).size >= 140
+      break if msg.size + n_msg.size >= 140
 
       msg += n_msg + ' '
     end
