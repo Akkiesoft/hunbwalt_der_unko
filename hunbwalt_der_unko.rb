@@ -14,7 +14,6 @@ Plugin.create(:hunbwalt_der_unko) do
   end
 
   on_der_unko do |message|
-    n_msg = ''
     msg = '@' + message.user.idname + ' '
     loop do
       n_msg = greets.sample
